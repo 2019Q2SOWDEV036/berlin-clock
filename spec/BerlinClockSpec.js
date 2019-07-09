@@ -1,8 +1,13 @@
 var BerlinClock = require("../src/BerlinClock");
 
-var time = new Date();
+var time, berlinClock;
 
-var berlinClock = new BerlinClock(time);
+beforeEach(function () {
+
+    time = new Date();
+
+    berlinClock = new BerlinClock(time);
+});
 
 describe("Berlin Clock", function () {
 
