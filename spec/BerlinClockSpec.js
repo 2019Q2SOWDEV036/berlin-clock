@@ -28,5 +28,12 @@ describe("Berlin Clock", function () {
 
             expect(berlinClock.bottomMinutes()).toBe("YYOO");
         });
+
+        it('should have all lamps to be ON in single minutes row', function () {
+
+            time.setMinutes(4, 0, 0);
+
+            expect(berlinClock.bottomMinutes()).toBe("YYYY");
+        });
     });
 });
