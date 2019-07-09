@@ -8,25 +8,32 @@ var BerlinClock = function (time) {
 
         illuminatedLamps = getMinutesForSingleMinuteRow();
 
-        non_illuminatedLamps = CONSTANTS.TOTAL_BOTTOM_MINUTES_LAMP - illuminatedLamps;
+        non_illuminatedLamps = getNonIlluminatedLamps(CONSTANTS.TOTAL_BOTTOM_MINUTES_LAMP, illuminatedLamps);
 
         return signLamps(illuminatedLamps, CONSTANTS.YELLOW) + signLamps(non_illuminatedLamps, CONSTANTS.OFF);
     };
     this.topMinutes = function () {
 
-        //return signLamps(11, CONSTANTS.OFF);
-
         var illuminatedLamps, non_illuminatedLamps;
 
-        illuminatedLamps = Math.floor(time.getMinutes() / 5);
+        illuminatedLamps = getMinutesForFiveMinuteRow();
 
-        non_illuminatedLamps = 11 - illuminatedLamps;
+        non_illuminatedLamps = getNonIlluminatedLamps(CONSTANTS.TOTAL_TOP_MINUTES_LAMP, illuminatedLamps);
 
         return quarterFiveMinutesLamps(illuminatedLamps) + signLamps(non_illuminatedLamps, CONSTANTS.OFF);
 
     };
+
+    function getNonIlluminatedLamps(totalLamps, illuminatedLamps) {
+        return totalLamps - illuminatedLamps;
+    }
+
     function getMinutesForSingleMinuteRow() {
         return time.getMinutes() % CONSTANTS.TIME_PER_LAMP_MINUTES;
+    }
+
+    function getMinutesForFiveMinuteRow() {
+        return Math.floor(time.getMinutes() / CONSTANTS.TIME_PER_LAMP_MINUTES);
     }
 
     function signLamps(numberLamps, lampSign) {

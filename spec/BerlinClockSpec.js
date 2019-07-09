@@ -41,7 +41,7 @@ describe("Berlin Clock", function () {
             expect(berlinClock.bottomMinutes()).toBe("YYYY");
         });
     });
-    
+
     describe("Five Minutes", function () {
 
         it('should have all lamps to be OFF in five minutes row', function () {
@@ -53,7 +53,7 @@ describe("Berlin Clock", function () {
 
         it('should have first red lamp to be ON in first quarter, half or last quarter and others are in yellow', function () {
 
-            time.setMinutes(59,0,0);
+            time.setMinutes(59, 0, 0);
 
             expect(berlinClock.topMinutes()).toBe("YYRYYRYYRYY");
         });
