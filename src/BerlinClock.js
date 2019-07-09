@@ -1,6 +1,11 @@
-var BerlinClock = function () {
+var BerlinClock = function (time) {
     this.bottomMinutes = function () {
-        return "OOOO";
+
+        if(time.getMinutes() % 5 === 1){
+            return "YOOO";
+        }else{
+            return "OOOO";
+        }
     }
 };
 module.exports = BerlinClock;

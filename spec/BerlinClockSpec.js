@@ -10,7 +10,16 @@ describe("Berlin Clock", function () {
 
         it('should have all lamps to be OFF in single minutes row', function () {
 
+            time.setMinutes(0, 0, 0);
+
             expect(berlinClock.bottomMinutes()).toBe("OOOO");
+        });
+
+        it('should have first lamp to be ON in single minutes row', function () {
+
+            time.setMinutes(1, 0, 0);
+
+            expect(berlinClock.bottomMinutes()).toBe("YOOO");
         });
     });
 });
