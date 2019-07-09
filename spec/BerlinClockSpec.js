@@ -50,5 +50,12 @@ describe("Berlin Clock", function () {
 
             expect(berlinClock.topMinutes()).toBe("OOOOOOOOOOO");
         });
+
+        it('should have first red lamp to be ON in first quarter, half or last quarter and others are in yellow', function () {
+
+            time.setMinutes(59,0,0);
+
+            expect(berlinClock.topMinutes()).toBe("YYRYYRYYRYY");
+        });
     });
 });

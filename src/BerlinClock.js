@@ -14,7 +14,15 @@ var BerlinClock = function (time) {
     };
     this.topMinutes = function () {
 
-        return signLamps(11, CONSTANTS.OFF);
+        //return signLamps(11, CONSTANTS.OFF);
+
+        var illuminatedLamps, non_illuminatedLamps;
+
+        illuminatedLamps = Math.floor(time.getMinutes() / 5);
+
+        non_illuminatedLamps = 11 - illuminatedLamps;
+
+        return quarterFiveMinutesLamps(illuminatedLamps) + signLamps(non_illuminatedLamps, CONSTANTS.OFF);
 
     };
     function getMinutesForSingleMinuteRow() {
@@ -27,6 +35,19 @@ var BerlinClock = function (time) {
             result += lampSign;
         }
         return result;
+    }
+
+    function quarterFiveMinutesLamps(illuminatedLamps) {
+        var output = "";
+        for (var lampMinute = 1; lampMinute <= illuminatedLamps; lampMinute++) {
+
+            if ((lampMinute % 3) === 0) {
+                output += CONSTANTS.RED;
+            } else {
+                output += CONSTANTS.YELLOW;
+            }
+        }
+        return output;
     }
 };
 module.exports = BerlinClock;
