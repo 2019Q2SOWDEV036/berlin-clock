@@ -60,16 +60,26 @@ describe("Berlin Clock", function () {
 
         it('should have first red lamps to be ON in five minutes row', function () {
 
-            time.setMinutes(23,0,0);
+            time.setMinutes(23, 0, 0);
 
             expect(berlinClock.topMinutes()).toBe("YYRYOOOOOOO");
         });
 
         it('should have first two red lamps to be ON in five minutes row', function () {
 
-            time.setMinutes(35,0,0);
+            time.setMinutes(35, 0, 0);
 
             expect(berlinClock.topMinutes()).toBe("YYRYYRYOOOO");
+        });
+    });
+
+    describe("Single Hours", function () {
+
+        it('should have all lamps to be OFF in single hours row', function () {
+
+            time.setHours(0, 0, 0, 0);
+
+            expect(berlinClock.bottomHours()).toBe("OOOO");
         });
     });
 });

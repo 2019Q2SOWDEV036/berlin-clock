@@ -24,6 +24,10 @@ var BerlinClock = function (time) {
 
     };
 
+    this.bottomHours = function () {
+        return signLamps(4, CONSTANTS.OFF);
+    };
+
     function getNonIlluminatedLamps(totalLamps, illuminatedLamps) {
         return totalLamps - illuminatedLamps;
     }

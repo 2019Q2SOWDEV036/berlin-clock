@@ -7,10 +7,18 @@
 <body>
 <script src="main.js"></script>
 <form style="margin-bottom: 30px;">
+
+    <input type="number" id="hours" placeholder="HH" min="0" max="23"/>
+
     <input type="number" id="minutes" placeholder="MM" min="0" max="59"/>
 
     <input type="submit" value="showBerlinTime" id="btnConvert"/>
 </form>
+
+<div>
+    <label>Berlin clock single hours : <span id="berlinTimeSingleHours"></span></label>
+</div>
+
 <label>Berlin clock five minutes : <span id="berlinTimeFiveMinutes"></span></label>
 <div>
     <label>Berlin clock single minutes : <span id="berlinTimeSingleMinutes"></span></label>

@@ -7,9 +7,17 @@ var berlinClock = new BerlinClock(time);
 window.onload = function () {
 
     document.getElementById("btnConvert").addEventListener("click", function (e) {
+
         e.preventDefault();
+
         time.setMinutes(document.getElementById("minutes").value);
+
+        time.setHours(document.getElementById("hours").value);
+
+        document.getElementById("berlinTimeSingleHours").innerHTML = berlinClock.bottomHours();
+
         document.getElementById("berlinTimeSingleMinutes").innerHTML = berlinClock.bottomMinutes();
+
         document.getElementById("berlinTimeFiveMinutes").innerHTML = berlinClock.topMinutes();
     });
 };
