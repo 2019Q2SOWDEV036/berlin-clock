@@ -84,23 +84,33 @@ describe("Berlin Clock", function () {
 
         it('should have first red lamp to be ON in single hours row', function () {
 
-            time.setHours(1,0,0,0);
+            time.setHours(1, 0, 0, 0);
 
             expect(berlinClock.bottomHours()).toBe("ROOO");
         });
 
         it('should have first 2 red lamps to be ON in single hours row', function () {
 
-            time.setHours(13,0,0,0);
+            time.setHours(13, 0, 0, 0);
 
             expect(berlinClock.bottomHours()).toBe("RRRO");
         });
 
         it('should have all red lamps to be ON in single hours row', function () {
 
-            time.setHours(14,0,0,0);
+            time.setHours(14, 0, 0, 0);
 
             expect(berlinClock.bottomHours()).toBe("RRRR");
+        });
+    });
+
+    describe("Five Hours", function () {
+
+        it('should have all lamps to be OFF in five hours row', function () {
+
+            time.setHours(4, 0, 0, 0);
+
+            expect(berlinClock.topHours()).toBe("OOOO");
         });
     });
 });
