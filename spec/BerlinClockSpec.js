@@ -88,5 +88,19 @@ describe("Berlin Clock", function () {
 
             expect(berlinClock.bottomHours()).toBe("ROOO");
         });
+
+        it('should have first 2 red lamps to be ON in single hours row', function () {
+
+            time.setHours(13,0,0,0);
+
+            expect(berlinClock.bottomHours()).toBe("RRRO");
+        });
+
+        it('should have all red lamps to be ON in single hours row', function () {
+
+            time.setHours(14,0,0,0);
+
+            expect(berlinClock.bottomHours()).toBe("RRRR");
+        });
     });
 });
