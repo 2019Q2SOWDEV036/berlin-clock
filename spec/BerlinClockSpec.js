@@ -81,5 +81,12 @@ describe("Berlin Clock", function () {
 
             expect(berlinClock.bottomHours()).toBe("OOOO");
         });
+
+        it('should have first red lamp to be ON in single hours row', function () {
+
+            time.setHours(1,0,0,0);
+
+            expect(berlinClock.bottomHours()).toBe("ROOO");
+        });
     });
 });
