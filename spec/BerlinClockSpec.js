@@ -57,5 +57,19 @@ describe("Berlin Clock", function () {
 
             expect(berlinClock.topMinutes()).toBe("YYRYYRYYRYY");
         });
+
+        it('should have first red lamps to be ON in five minutes row', function () {
+
+            time.setMinutes(23,0,0);
+
+            expect(berlinClock.topMinutes()).toBe("YYRYOOOOOOO");
+        });
+
+        it('should have first two red lamps to be ON in five minutes row', function () {
+
+            time.setMinutes(35,0,0);
+
+            expect(berlinClock.topMinutes()).toBe("YYRYYRYOOOO");
+        });
     });
 });
