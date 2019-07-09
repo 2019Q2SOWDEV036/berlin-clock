@@ -4,6 +4,9 @@ var CONSTANTS = {
     YELLOW: "Y",
     OFF: "O",
     RED: "R",
-    TOTAL_TOP_MINUTES_LAMP: "11"
+    TOTAL_TOP_MINUTES_LAMP: "11",
+    TOTAL_HOURS_LAMP: "4",
+    TIME_PER_LAMP_HOURS: "5"
+
 };
 module.exports = CONSTANTS;
