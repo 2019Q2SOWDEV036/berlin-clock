@@ -37,9 +37,16 @@ var BerlinClock = function (time) {
 
     this.topHours = function () {
 
-        return signLamps(4, CONSTANTS.OFF);
+        var illuminatedLamps, non_illuminatedLamps;
+
+        illuminatedLamps = getHoursForFiveHoursRow();
+
+        non_illuminatedLamps = getNonIlluminatedLamps(CONSTANTS.TOTAL_HOURS_LAMP, illuminatedLamps);
+
+        return signLamps(illuminatedLamps, CONSTANTS.RED) + signLamps(non_illuminatedLamps, CONSTANTS.OFF);
 
     };
+
     function getNonIlluminatedLamps(totalLamps, illuminatedLamps) {
         return totalLamps - illuminatedLamps;
     }
@@ -54,6 +61,10 @@ var BerlinClock = function (time) {
 
     function getMinutesForFiveMinuteRow() {
         return Math.floor(time.getMinutes() / CONSTANTS.TIME_PER_LAMP_MINUTES);
+    }
+
+    function getHoursForFiveHoursRow() {
+        return Math.floor(time.getHours() / CONSTANTS.TIME_PER_LAMP_HOURS);
     }
 
     function signLamps(numberLamps, lampSign) {
