@@ -12,7 +12,11 @@ var BerlinClock = function (time) {
 
         return signLamps(illuminatedLamps, CONSTANTS.YELLOW) + signLamps(non_illuminatedLamps, CONSTANTS.OFF);
     };
+    this.topMinutes = function () {
 
+        return signLamps(11, CONSTANTS.OFF);
+
+    };
     function getMinutesForSingleMinuteRow() {
         return time.getMinutes() % CONSTANTS.TIME_PER_LAMP_MINUTES;
     }

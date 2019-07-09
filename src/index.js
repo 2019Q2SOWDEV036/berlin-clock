@@ -9,6 +9,7 @@ window.onload = function () {
     document.getElementById("btnConvert").addEventListener("click", function (e) {
         e.preventDefault();
         time.setMinutes(document.getElementById("minutes").value);
-        document.getElementById("berlinTime").innerHTML = berlinClock.bottomMinutes();
+        document.getElementById("berlinTimeSingleMinutes").innerHTML = berlinClock.bottomMinutes();
+        document.getElementById("berlinTimeFiveMinutes").innerHTML = berlinClock.topMinutes();
     });
 };

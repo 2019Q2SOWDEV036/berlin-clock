@@ -41,4 +41,14 @@ describe("Berlin Clock", function () {
             expect(berlinClock.bottomMinutes()).toBe("YYYY");
         });
     });
+    
+    describe("Five Minutes", function () {
+
+        it('should have all lamps to be OFF in five minutes row', function () {
+
+            time.setMinutes(4, 0, 0);
+
+            expect(berlinClock.topMinutes()).toBe("OOOOOOOOOOO");
+        });
+    });
 });
