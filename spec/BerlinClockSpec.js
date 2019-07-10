@@ -147,7 +147,8 @@ describe("Berlin Clock", function () {
 
             time.setSeconds(0,60);
 
-            expect(berlinClock.seconds()).toBe("O");
+            expect(berlinClock.seconds()).toBe("Y");
         });
+
     });
 });
