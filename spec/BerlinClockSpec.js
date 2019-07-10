@@ -115,27 +115,27 @@ describe("Berlin Clock", function () {
 
         it('should have first red lamp to be ON in five hours row', function () {
 
-            time.setHours(9,0,0,0);
+            time.setHours(9, 0, 0, 0);
 
             expect(berlinClock.topHours()).toBe("ROOO");
         });
 
         it('should have first two red lamps to be ON in five hours row', function () {
 
-            time.setHours(14,0,0,0);
+            time.setHours(14, 0, 0, 0);
 
             expect(berlinClock.topHours()).toBe("RROO");
         });
 
         it('should have first three red lamps to be ON in five hours row', function () {
 
-            time.setHours(19,0,0,0);
+            time.setHours(19, 0, 0, 0);
 
             expect(berlinClock.topHours()).toBe("RRRO");
         });
         it('should have all red lamps to be ON in five hours row', function () {
 
-            time.setHours(20,0,0,0);
+            time.setHours(20, 0, 0, 0);
 
             expect(berlinClock.topHours()).toBe("RRRR");
         });
@@ -145,17 +145,27 @@ describe("Berlin Clock", function () {
 
         it('should have lamp ON in even seconds', function () {
 
-            time.setSeconds(0,60);
+            time.setSeconds(0, 60);
 
             expect(berlinClock.seconds()).toBe("Y");
         });
 
         it('should have lamp OFF in odd seconds', function () {
 
-            time.setSeconds(1,60);
+            time.setSeconds(1, 60);
 
             expect(berlinClock.seconds()).toBe("O");
         });
 
+    });
+
+    describe("Integrate Entire Berlin Clock", function () {
+
+        it('should have berlin time when time at 00:00:00', function () {
+
+            time.setHours(0, 0, 0);
+
+            expect(berlinClock.getBerlinClock()).toBe("YOOOOOOOOOOOOOOOOOOOOOOO");
+        });
     });
 });

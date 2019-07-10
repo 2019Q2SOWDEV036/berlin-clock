@@ -54,6 +54,10 @@ var BerlinClock = function (time) {
             return CONSTANTS.OFF;
         }
     };
+    this.getBerlinClock = function () {
+
+        return this.seconds() + this.topHours() + this.bottomHours() + this.topMinutes() + this.bottomMinutes();
+    };
 
     function getSecondsLamp() {
         return time.getSeconds() % 2 === 0;
