@@ -5,35 +5,47 @@
     <title>Berlin Clock</title>
 </head>
 <body>
+<style>
+    .space {
+        margin-bottom: 30px;
+    }
+
+    .error {
+        color: #ff0000;
+    }
+
+    .btn {
+        margin-top: 20px;
+    }
+</style>
 <script src="main.js"></script>
-<form style="margin-bottom: 30px;">
 
-    <input type="number" id="hours" placeholder="HH" min="0" max="23"/>
+<h1>Show Berlin Clock</h1>
+<form class="space">
+    <div class="error">
+        <p id="hoursError"></p>
+        <p id="minutesError"></p>
+        <p id="secondsError"></p>
+    </div>
+    <div>
+        <span>Enter hours</span>
+        <input type="number" id="hours" placeholder="HH" min="0" max="23"/>
+        <span>Enter minutes</span>
+        <input type="number" id="minutes" placeholder="MM" min="0" max="59"/>
+        <span>Enter seconds</span>
+        <input type="number" id="seconds" placeholder="SS" min="0" max="59"/>
+    </div>
+    <div class="btn">
+        <input type="submit" value="ShowBerlinTime" id="btnConvert"/>
+    </div>
 
-    <input type="number" id="minutes" placeholder="MM" min="0" max="59"/>
-
-    <input type="number" id="seconds" placeholder="SS" min="0" max="59"/>
-
-    <input type="submit" value="showBerlinTime" id="btnConvert"/>
 </form>
-<div>
-    <label>Berlin clock : <span id="berlinClockTime"></span></label>
-</div>
-
-<div>
-    <label>Berlin clock for seconds : <span id="berlinTimeToggleSeconds"></span></label>
-</div>
-<div>
-    <label>Berlin clock five hours : <span id="berlinTimeFiveHours"></span></label>
-</div>
-<div>
-    <label>Berlin clock single hours : <span id="berlinTimeSingleHours"></span></label>
-</div>
-
-<label>Berlin clock five minutes : <span id="berlinTimeFiveMinutes"></span></label>
-<div>
-    <label>Berlin clock single minutes : <span id="berlinTimeSingleMinutes"></span></label>
-</div>
+<p><b>Berlin clock : </b><span id="berlinClockTime"></span></p>
+<p><b>Berlin clock for seconds :</b> <span id="berlinTimeToggleSeconds"></span></p>
+<p><b>Berlin clock five hours : </b><span id="berlinTimeFiveHours"></span></p>
+<p><b>Berlin clock single hours :</b> <span id="berlinTimeSingleHours"></span></p>
+<p><b>Berlin clock five minutes : </b><span id="berlinTimeFiveMinutes"></span></p>
+<p><b>Berlin clock single minutes :</b> <span id="berlinTimeSingleMinutes"></span></p>
 
 </body>
 </html>
