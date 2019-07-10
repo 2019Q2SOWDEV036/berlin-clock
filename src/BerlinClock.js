@@ -55,8 +55,15 @@ var BerlinClock = function (time) {
         }
     };
     this.getBerlinClock = function () {
+        var clock = [];
 
-        return this.seconds() + this.topHours() + this.bottomHours() + this.topMinutes() + this.bottomMinutes();
+        clock.push(this.seconds());
+        clock.push(this.topHours());
+        clock.push(this.bottomHours());
+        clock.push(this.topMinutes());
+        clock.push(this.bottomMinutes());
+
+        return clock.join("");
     };
 
     function getSecondsLamp() {
