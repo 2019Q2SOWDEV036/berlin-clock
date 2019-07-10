@@ -143,11 +143,18 @@ describe("Berlin Clock", function () {
 
     describe("Seconds", function () {
 
-        it('should have lamp OFF in odd seconds', function () {
+        it('should have lamp ON in even seconds', function () {
 
             time.setSeconds(0,60);
 
             expect(berlinClock.seconds()).toBe("Y");
+        });
+
+        it('should have lamp OFF in odd seconds', function () {
+
+            time.setSeconds(1,60);
+
+            expect(berlinClock.seconds()).toBe("O");
         });
 
     });
