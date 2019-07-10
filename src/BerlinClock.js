@@ -49,9 +49,9 @@ var BerlinClock = function (time) {
 
     this.seconds = function () {
         if (getSecondsLamp()) {
-            return "Y";
+            return CONSTANTS.YELLOW;
         } else {
-            return "O";
+            return CONSTANTS.OFF;
         }
     };
 
