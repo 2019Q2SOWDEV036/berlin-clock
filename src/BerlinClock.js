@@ -48,13 +48,16 @@ var BerlinClock = function (time) {
     };
 
     this.seconds = function () {
-
-        if (time.getSeconds() % 2 === 0) {
+        if (getSecondsLamp()) {
             return "Y";
         } else {
             return "O";
         }
     };
+
+    function getSecondsLamp() {
+        return time.getSeconds() % 2 === 0;
+    }
 
     function getNonIlluminatedLamps(totalLamps, illuminatedLamps) {
         return totalLamps - illuminatedLamps;
