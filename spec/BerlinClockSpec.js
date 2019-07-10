@@ -140,4 +140,14 @@ describe("Berlin Clock", function () {
             expect(berlinClock.topHours()).toBe("RRRR");
         });
     });
+
+    describe("Seconds", function () {
+
+        it('should have lamp OFF in odd seconds', function () {
+
+            time.setSeconds(0,60);
+
+            expect(berlinClock.seconds()).toBe("O");
+        });
+    });
 });

@@ -47,6 +47,10 @@ var BerlinClock = function (time) {
 
     };
 
+    this.seconds = function () {
+        return "O";
+    };
+
     function getNonIlluminatedLamps(totalLamps, illuminatedLamps) {
         return totalLamps - illuminatedLamps;
     }

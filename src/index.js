@@ -14,6 +14,10 @@ window.onload = function () {
 
         time.setHours(document.getElementById("hours").value);
 
+        time.setSeconds(document.getElementById("seconds").value);
+
+        document.getElementById("berlinTimeToggleSeconds").innerHTML = berlinClock.seconds();
+
         document.getElementById("berlinTimeFiveHours").innerHTML = berlinClock.topHours();
 
         document.getElementById("berlinTimeSingleHours").innerHTML = berlinClock.bottomHours();
