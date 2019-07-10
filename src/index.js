@@ -1,8 +1,6 @@
-var BerlinClock = require("./BerlinClock");
+var ValidateClock = require("./Validation");
 
-var time = new Date();
-
-var berlinClock = new BerlinClock(time);
+var validateClock = new ValidateClock();
 
 window.onload = function () {
 
@@ -10,22 +8,6 @@ window.onload = function () {
 
         e.preventDefault();
 
-        time.setMinutes(document.getElementById("minutes").value);
-
-        time.setHours(document.getElementById("hours").value);
-
-        time.setSeconds(document.getElementById("seconds").value);
-
-        document.getElementById("berlinClockTime").innerHTML = berlinClock.getBerlinClock();
-
-        document.getElementById("berlinTimeToggleSeconds").innerHTML = berlinClock.seconds();
-
-        document.getElementById("berlinTimeFiveHours").innerHTML = berlinClock.topHours();
-
-        document.getElementById("berlinTimeSingleHours").innerHTML = berlinClock.bottomHours();
-
-        document.getElementById("berlinTimeSingleMinutes").innerHTML = berlinClock.bottomMinutes();
-
-        document.getElementById("berlinTimeFiveMinutes").innerHTML = berlinClock.topMinutes();
+        validateClock.validateTime();
     });
 };
