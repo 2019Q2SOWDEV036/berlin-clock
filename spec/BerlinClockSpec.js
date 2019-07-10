@@ -167,5 +167,27 @@ describe("Berlin Clock", function () {
 
             expect(berlinClock.getBerlinClock()).toBe("YOOOOOOOOOOOOOOOOOOOOOOO");
         });
+
+        it('should have berlin time when time at 16:50:06', function () {
+
+            time.setHours(16, 50, 6);
+
+            expect(berlinClock.getBerlinClock()).toBe("YRRROROOOYYRYYRYYRYOOOOO");
+        });
+
+        it('should have berlin time when time at 11:37:01', function () {
+
+            time.setHours(11, 37, 1);
+
+            expect(berlinClock.getBerlinClock()).toBe("ORROOROOOYYRYYRYOOOOYYOO");
+        });
+
+        it('should have berlin time when time at 23:59:59', function () {
+
+            time.setHours(23, 59, 59);
+
+            expect(berlinClock.getBerlinClock()).toBe("ORRRRRRROYYRYYRYYRYYYYYY");
+        });
+
     });
 });
